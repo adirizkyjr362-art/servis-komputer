@@ -14,22 +14,36 @@ if (!isset($_SESSION['user'])) {
 // ======================================================
 if (isset($_POST['tambah'])) {
 
+    // ==================================================
+    // VALIDASI NAMA PELANGGAN
+    // ==================================================
+    $nama_pelanggan = trim($_POST['nama_pelanggan'] ?? '');
+
+    if ($nama_pelanggan === '') {
+        echo "<script>
+                alert('Nama pelanggan harap diisi.');
+                window.history.back();
+              </script>";
+        exit;
+    }
+
+
     // -----------------------------
     // DATA PELANGGAN BARU
     // -----------------------------
     $nama_pelanggan = mysqli_real_escape_string(
         $conn,
-        $_POST['nama_pelanggan']
+        $nama_pelanggan
     );
 
     $no_hp = mysqli_real_escape_string(
         $conn,
-        $_POST['no_hp']
+        $_POST['no_hp'] ?? ''
     );
 
     $alamat = mysqli_real_escape_string(
         $conn,
-        $_POST['alamat']
+        $_POST['alamat'] ?? ''
     );
 
 
@@ -38,39 +52,39 @@ if (isset($_POST['tambah'])) {
     // -----------------------------
     $jenis_barang = mysqli_real_escape_string(
         $conn,
-        $_POST['jenis_barang']
+        $_POST['jenis_barang'] ?? ''
     );
 
     $merek = mysqli_real_escape_string(
         $conn,
-        $_POST['merek']
+        $_POST['merek'] ?? ''
     );
 
     $kelengkapan = mysqli_real_escape_string(
         $conn,
-        $_POST['kelengkapan']
+        $_POST['kelengkapan'] ?? ''
     );
 
     $keluhan = mysqli_real_escape_string(
         $conn,
-        $_POST['keluhan']
+        $_POST['keluhan'] ?? ''
     );
 
-    $estimasi_biaya = (int) $_POST['estimasi_biaya'];
+    $estimasi_biaya = (int) ($_POST['estimasi_biaya'] ?? 0);
 
     $tanggal_masuk = mysqli_real_escape_string(
         $conn,
-        $_POST['tanggal_masuk']
+        $_POST['tanggal_masuk'] ?? ''
     );
 
     $status = mysqli_real_escape_string(
         $conn,
-        $_POST['status']
+        $_POST['status'] ?? ''
     );
 
     $catatan = mysqli_real_escape_string(
         $conn,
-        $_POST['catatan']
+        $_POST['catatan'] ?? ''
     );
 
 
@@ -337,4 +351,3 @@ if (isset($_GET['hapus_detail'])) {
 }
 
 ?>
-```

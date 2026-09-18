@@ -32,9 +32,9 @@ Contoh struktur:
 ```javascript
 const dataServis = [];
 dataServis.push({
-    kode: "S001",
-    pelanggan: "Budi",
-    status: "Proses"
+    kode: "S26001",
+    pelanggan: "Ilhammm",
+    status: "Selesai"
 });
 ```
 
@@ -52,7 +52,7 @@ Simple DataTables digunakan pada tabel daftar servis untuk membantu pencarian, p
 ## Struktur Direktori
 
 ```text
-daa/
+UJK/
 ├── admin/
 │   ├── css/
 │   ├── js/
@@ -80,7 +80,7 @@ daa/
 2. Aktifkan Apache dan MySQL.
 3. Salin folder `daa` ke `htdocs`.
 4. Buat/import database sesuai konfigurasi `config/koneksi.php`.
-5. Buka aplikasi melalui `http://localhost/daa/`.
+5. Buka aplikasi melalui `http://localhost/UJK/`.
 
 ## Catatan
 Data servis utama disimpan di MySQL. Array of Objects pada `servis.js` hanya digunakan untuk struktur dan pengolahan data di JavaScript, bukan sebagai pengganti database.
