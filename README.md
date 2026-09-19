@@ -20,6 +20,8 @@ Aplikasi web untuk pengelolaan dan pelacakan data servis komputer pada CV Megabi
 - Pelacakan servis berdasarkan kode servis
 - Notifikasi proses berhasil atau gagal
 
+[Tampilan Dashboard](assets/Dashboard.png)
+
 ## JavaScript `admin/js/servis.js`
 
 File ini digunakan pada halaman admin yang berkaitan dengan data servis.
